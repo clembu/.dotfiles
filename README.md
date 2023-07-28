@@ -7,10 +7,16 @@ It's whatever goes in my `.config`, `.local`, and other "dot" directories.
 
 It uses [Stow](https://www.gnu.org/software/stow/) to maintain what goes where:
 
-Each top-level directory in this repo is a "package" containing various
+Each directory under `stow` and `personal` in this repo is a "package" containing various
 configurations, helper scripts, etc.
 
 Stow will "install" those in the `$HOME` directory through symlinks.
+
+## Note about `personal`
+
+This is a git submodule containing packages relevant to myself and only myself.
+If you could use one of your own, edit the submodule URL in your fork, if not, just
+remove it, you're smart.
 
 ## Getting started
 

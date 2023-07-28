@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
-pushd $HOME/.dotfiles
+function do_stow {
+    pushd $1
 
-for PCK in */
-do
-    PCK=${PCK%/}
-    echo "stow -R $PCK"
-    stow -t $HOME -R $PCK
-done
+    for PCK in */
+    do
+        PCK=${PCK%/}
+        echo "stow -R $PCK"
+        stow --ignore='README.*' -t $HOME -R $PCK
+    done
 
-popd
+    popd
+}
+
+do_stow $HOME/.dotfiles/stow
+do_stow $HOME/.dotfiles/personal
