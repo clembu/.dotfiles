@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-function get_random_bg {
-    ls $WALLPAPERS_DIR/$1/* | sort -R | tail -1
-}
-
-function set_random_bg {
-    swaymsg "output $1 bg $(get_random_bg $2) fill"
-}
-
 function get_outputs_orient {
     swaymsg -t get_outputs | jq '[.[] | {"key": .name, "value": (if .rect.width < .rect.height then "v" else "h" end) }] | from_entries'
 }
@@ -17,7 +9,7 @@ function with_sway_ws_outputs {
 }
 
 outputs=$(get_outputs_orient);
-jq --argjson outputs "$outptus" --unbuffered -n -r '$outputs | keys | .[] | ., $outputs[.]' |
+jq --argjson outputs "$outputs" --unbuffered -n -r '$outputs | keys | .[] | ., $outputs[.]' |
     xargs -L 2 set_random_bg
 
 with_sway_ws_outputs |
