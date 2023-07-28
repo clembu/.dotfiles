@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+pushd $HOME/.dotfiles
+
+for PCK in */
+do
+    PCK=${PCK%/}
+    echo "stow -R $PCK"
+    stow -t $HOME -R $PCK
+done
+
+popd
