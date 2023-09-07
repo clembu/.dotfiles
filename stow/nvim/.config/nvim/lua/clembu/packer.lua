@@ -9,6 +9,12 @@ return require('packer').startup(function(use)
 	}
 	use 'theprimeagen/harpoon'
 	use 'tpope/vim-unimpaired'
+    use {
+        'echasnovski/mini.files',
+        requires = {
+            { 'nvim-tree/nvim-web-devicons' }
+        }
+    }
 
 	-- HISTORY
 	use 'mbbill/undotree'
