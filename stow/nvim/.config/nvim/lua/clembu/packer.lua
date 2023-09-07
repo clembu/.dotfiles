@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
 
 	-- MOTIONS, TEXTOBJECTS
 	use 'tpope/vim-surround'
-	use 'gbprod/substitute.nvim'
+    use 'echasnovski/mini.operators'
 
 	-- COLORS
 	use {
