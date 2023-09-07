@@ -9,3 +9,7 @@ vim.keymap.set('n', '<leader>pS', builtin.grep_string, {desc = "Search <cword> i
 vim.keymap.set('n', '<leader>lf', builtin.find_files, {desc = "List files in cwd"})
 vim.keymap.set('n', '<leader>lb', builtin.buffers, {desc = "List open buffers"})
 vim.keymap.set('n', '<leader>lh', builtin.help_tags, {desc = "List help tags"})
+
+-- Additional project pickers
+require('todo-comments').setup()
+vim.keymap.set('n', '<leader>lt', vim.cmd.TodoTelescope, {desc = "List project todos"})
