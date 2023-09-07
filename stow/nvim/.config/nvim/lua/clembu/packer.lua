@@ -58,6 +58,7 @@ return require('packer').startup(function(use)
 
 	-- MOTIONS, TEXTOBJECTS
 	use 'tpope/vim-surround'
+    use 'tpope/vim-commentary'
     use 'echasnovski/mini.operators'
 
 	-- COLORS
