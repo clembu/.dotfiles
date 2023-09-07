@@ -53,6 +53,8 @@ return require('packer').startup(function(use)
             { 'folke/twilight.nvim' }
         }
     }
+    use 'echasnovski/mini.trailspace'
+
 	-- MOTIONS, TEXTOBJECTS
 	use 'tpope/vim-surround'
 	use 'gbprod/substitute.nvim'

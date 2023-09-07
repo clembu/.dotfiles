@@ -10,3 +10,4 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
+require('mini.trailspace').setup()
