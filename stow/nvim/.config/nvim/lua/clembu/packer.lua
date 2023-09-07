@@ -41,6 +41,12 @@ return require('packer').startup(function(use)
 		}
 	}
 
+    use {
+        'folke/zen-mode.nvim',
+        requires = {
+            { 'folke/twilight.nvim' }
+        }
+    }
 	-- MOTIONS, TEXTOBJECTS
 	use 'tpope/vim-surround'
 	use 'gbprod/substitute.nvim'
