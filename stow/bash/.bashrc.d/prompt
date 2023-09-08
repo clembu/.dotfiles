@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+. ~/.bin/git/git-prompt.sh
+
+# Little breakdown:
+# 1. SET Line color
+LCOL="\[\e[34m\]"
+# 2. PRINT top bracket
+# 3. PRINT full hline (the whole eval printf thing)
+HLINE="\$(eval printf %.0s─ '{2..'\"\${COLUMNS:-\$(tput cols)}\"\}; echo)"
+# 4. PRINT newline
+# 5. GO back to first line, after the top bracket
+L1MARK="\[\e[1A\e[2C\]"
+# 6. PRINT ┤
+# 7. SET cwd color
+WCOL="\[\e[35m\]"
+# 7. PRINT cwd
+# 8. SET Line color
+# 9. PRINT ├
+# 10. GO right
+# 11. CALL git-prompt
+#   11.A. PRINT ┤
+#   11.B. SET git color
+GCOL="\[\e[33m\]"
+#   11.C. PRINT git
+#   11.D SET Line color
+#   11.E. PRINT ├
+GPS1="\$(GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWUPSTREAM=1 __git_ps1 \"┤ $GCOL%s $LCOL├\")"
+# 12. GO to the next line
+# 13. PRINT bottom bracket
+# 14. PRINT dollar sign
+# 15. RESET color
+
+export PS1="$LCOL╭$HLINE\n$L1MARK┤ $WCOL\w $LCOL├\[\e[1C\]$GPS1\[\e[1E\]╰─$\[\e[m\] "
+
+unset LCOL
+unset HLINE
+unset L1MARK
+unset WCOL
+unset GCOL
+unset GPS1
