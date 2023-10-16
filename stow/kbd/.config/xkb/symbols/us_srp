@@ -27,8 +27,8 @@ xkb_symbols "basic" {
     key <AD08> { [	   i,          I,    idiaeresis,       Idiaeresis ] };
     key <AD09> { [	   o,          O,   ocircumflex,      Ocircumflex ] };
     key <AD10> { [	   p,          P,    odiaeresis,       Odiaeresis ] };
-    key <AD11> { [ parenleft, bracketleft,  braceleft,  leftdoublequotemark ] };
-    key <AD12> { [ parenright, bracketright, braceright,  rightdoublequotemark ] };
+    key <AD11> { [ parenleft, braceleft,  bracketleft,  leftdoublequotemark ] };
+    key <AD12> { [ parenright, braceright, bracketright,  rightdoublequotemark ] };
 
     key <AC01> { [	   a,          A,        agrave,           Agrave ] };
     key <AC02> { [	   s,          S,        ssharp,          section ] };
