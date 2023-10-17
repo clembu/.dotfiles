@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
 
     -- HISTORY
     use 'mbbill/undotree'
-    use 'tpope/vim-fugitive'
+    use 'NeogitOrg/neogit'
 
     -- CODE
     use {
