@@ -1,0 +1,108 @@
+* {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Liberation Mono;
+    min-height: 20px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar > box {
+    margin: 5px 0px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+ * ROUNDED BOXES
+ */
+
+.modules-center,
+#language,
+#custom-media,
+#mode,
+#pulseaudio,
+#network
+{
+    border-radius: 10px;
+    background: #383c4a;
+    color: #ffffff;
+    padding: 5px 8px;
+    margin: 0px 5px;
+    transition: none;
+}
+
+/* 
+ * OUTER BOXES
+ */
+
+#workspaces {
+    border-radius: 0px 10px 10px 0px;
+    background: #383c4a;
+    color: #ffffff;
+    padding: 5px 8px;
+    transition: none;
+}
+
+#tray {
+    border-radius: 10px 0px 0px 10px;
+    background: #383c4a;
+    color: #ffffff;
+    padding: 5px 8px;
+    transition: none;
+}
+
+/*
+ * WORKSPACE BUTTONS
+ */
+
+#workspaces button {
+    transition: none;
+    color: #7c818c;
+    background: transparent;
+}
+
+#workspaces button.focused {
+    color: #ffffff;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    transition: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    border-radius: inherit;
+    color: #383c4a;
+    background: #7c818c;
+}
+
+/*
+ * PULSEAUDIO
+ */
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+/*
+ * NETWORK
+ */
+
+#network {
+    padding-right: 11px;
+}
+
+/* 
+ * IDLE INHIBITOR
+ */
+#idle_inhibitor {
+    margin: 0px 5px 0px 10px;
+}
