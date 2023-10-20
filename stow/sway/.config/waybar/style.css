@@ -98,11 +98,13 @@ window#waybar.hidden {
 
 #network {
     padding-right: 11px;
+    margin: 0;
 }
 
 /* 
  * IDLE INHIBITOR
  */
+
 #idle_inhibitor {
     margin: 0px 5px 0px 10px;
 }
