@@ -31,8 +31,10 @@ vim.keymap.set("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 vim.keymap.set("n", "<leader>p", "\"_dP", {desc = "Paste over" })
 vim.keymap.set("n", "gp", "\"+p", {desc = "Paste from system" })
 vim.keymap.set("n", "gP", "\"+P", {desc = "Paste from system" })
+vim.keymap.set("v", "gp", "\"+p", {desc = "Paste from system" })
 vim.keymap.set("n", "<leader>y", "\"+y", {desc = "Yank to system"})
 vim.keymap.set("n", "<leader>Y", "\"+Y", {desc = "Yank rest of line to system"})
+vim.keymap.set("v", "<leader>y", "\"+y", {desc = "Yank to system"})
 vim.keymap.set({"n","v"}, "<leader>d", "\"_d", {desc = "Delete to void" })
 
 -- Buffer manipulation --
