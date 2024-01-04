@@ -58,4 +58,13 @@ require("lspconfig").lua_ls.setup({
     }
 })
 
+local nls = require('null-ls')
+nls.setup({
+    sources = {
+        nls.builtins.formatting.clang_format.with({
+            prefer_local = "lib/linux_x86_64_glibc_228/llvm/bin"
+        })
+    }
+})
+
 lsp.setup()
