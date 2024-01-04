@@ -9,7 +9,7 @@ xkb_symbols "basic" {
     key <AE03> { [	   3, numbersign,   ecircumflex,      Ecircumflex ] };
     key <AE04> { [	   4,     dollar,      currency,         sterling ] };
     key <AE05> { [	   5,    percent,      EuroSign,     dead_cedilla ] };
-    key <AE06> { [    6, dead_circumflex,    onequarter,      asciicircum ] };
+    key <AE06> { [    6, asciicircum,    onequarter,      dead_circumflex ] };
     key <AE07> { [	   7,  ampersand,       ucircumflex,	Ucircumflex ] };
     key <AE08> { [	   8,   asterisk, icircumflex,      Icircumflex ] };
     key <AE09> { [	   9,  parenleft, leftsinglequotemark, dead_breve ] };
@@ -44,12 +44,12 @@ xkb_symbols "basic" {
 
     key <AB01> { [	   z,          Z,            ae,               AE ] };
     key <AB02> { [	   x,          X,             x,                X ] };
-    key <AB03> { [	   c,          C,     copyright,             cent ] };
+    key <AB03> { [	   c,          C,      ccedilla,         Ccedilla ] };
     key <AB04> { [	   v,          V,             v,                V ] };
     key <AB05> { [	   b,          B,             b,                B ] };
     key <AB06> { [	   n,          N,        ntilde,           Ntilde ] };
     key <AB07> { [	   m,          M,            mu,               mu ] };
-    key <AB08> { [     comma,       less,      ccedilla,         Ccedilla ] };
+    key <AB08> { [     comma,       less,     copyright,             cent ] };
     key <AB09> { [    period,    greater, dead_abovedot,       dead_caron ] };
     key <AB10> { [     slash,   question,  questiondown,        dead_hook ] };
     key <BKSL> { [ backslash,        bar,       notsign,        brokenbar ] };
