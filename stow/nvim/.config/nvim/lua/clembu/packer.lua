@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
     -- HISTORY
     use 'mbbill/undotree'
     use 'NeogitOrg/neogit'
+    use 'FabijanZulj/blame.nvim'
 
     -- CODE
     use {
