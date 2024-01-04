@@ -58,6 +58,8 @@ require("lspconfig").lua_ls.setup({
     }
 })
 
+require('lspconfig').ocamllsp.setup{}
+
 local nls = require('null-ls')
 nls.setup({
     sources = {
