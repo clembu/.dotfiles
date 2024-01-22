@@ -1,6 +1,7 @@
 -- Line numbering
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = 'number'
 
 -- Indentation
 vim.opt.tabstop = 4
@@ -26,10 +27,14 @@ vim.opt.incsearch = true
 -- Colors
 vim.opt.termguicolors = true
 
--- Scrolling
+-- Windowing
 vim.opt.scrolloff = 8
+vim.opt.laststatus = 3
 
 -- File handling
 -- This one helps vim think `@` can be part of a filename
 vim.opt.isfname:append('@-@')
 vim.opt.updatetime = 50
+
+-- WHITESPACE
+vim.opt.listchars = 'tab:> ,trail:-,nbsp:+,eol:\\u21b5,extends:\\u2026,precedes:\\u2026'
