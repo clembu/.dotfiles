@@ -5,6 +5,36 @@ local mason = {
     end
 }
 
+local none_ls = {
+    'nvimtools/none-ls.nvim',
+    config = function()
+        local null_ls = require('null-ls')
+        null_ls.setup({
+            sources = {
+                null_ls.builtins.formatting.stylua,
+                null_ls.builtins.formatting.prettier.with({
+                    prefer_local = 'node_modules/.bin',
+                    filetypes = {
+                        'javascript',
+                        'javascriptreact',
+                        'typescript',
+                        'typescriptreact',
+                        'vue',
+                        'css',
+                        'scss',
+                        'less',
+                        'html',
+                        'json',
+                        'jsonc',
+                        'yaml',
+                        'svelte',
+                    },
+                }),
+            },
+        })
+    end,
+}
+
 local function setup_lua_ls()
     require 'lspconfig'.lua_ls.setup {
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
@@ -153,6 +183,7 @@ return {
     mason_lspconfig,
     cmp,
     lspconfig,
+    none_ls,
     {
         'j-hui/fidget.nvim',
         config = function()
