@@ -100,7 +100,7 @@ local lspconfig = {
         require('lspconfig').ocamllsp.setup({
             capabilities = require('cmp_nvim_lsp').default_capabilities()
         })
-
+        require('lspconfig').gleam.setup({})
         vim.diagnostic.config({
             update_on_insert = true,
             float = {
