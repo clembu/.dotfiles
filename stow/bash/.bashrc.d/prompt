@@ -9,33 +9,39 @@ LCOL="\[\e[34m\]"
 # 3. PRINT full hline (the whole eval printf thing)
 HLINE="\$(eval printf %.0s─ '{2..'\"\${COLUMNS:-\$(tput cols)}\"\}; echo)"
 # 4. PRINT newline
-# 5. GO back to first line, after the top bracket
-L1MARK="\[\e[1A\e[2C\]"
-# 6. PRINT ┤
-# 7. SET cwd color
+# 5. PRINT bottom bracket
+# 6. PRINT dollar sign
+# 7. SAVE cursor location
+SC="\[\$(tput sc;"
+# 8. GO back to first line, after the top bracket
+L1MARK="tput hpa 2)"
+# 9. PRINT ┤
+# 10. SET cwd color
 WCOL="\[\e[35m\]"
-# 7. PRINT cwd
-# 8. SET Line color
-# 9. PRINT ├
-# 10. GO right
-# 11. CALL git-prompt
-#   11.A. PRINT ┤
-#   11.B. SET git color
+# 11. PRINT cwd
+# 12. SET Line color
+# 13. PRINT ├
+# 14. GO right
+# 15. CALL git-prompt
+#   15.A. PRINT ┤
+#   15.B. SET git color
 GCOL="\[\e[33m\]"
-#   11.C. PRINT git
-#   11.D SET Line color
-#   11.E. PRINT ├
+#   15.C. PRINT git
 GPS1="\$(GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWUPSTREAM=1 __git_ps1 \"┤ $GCOL%s $LCOL├\")"
-# 12. GO to the next line
-# 13. PRINT bottom bracket
-# 14. PRINT dollar sign
-# 15. RESET color
+#   15.D SET Line color
+#   15.E. PRINT ├
+# 16. RESET cursor location
+RC="\$(tput rc)\]"
+# 17. RESET color
+RCOL="\[\e[m\]"
 
-export PS1="$LCOL╭$HLINE\n$L1MARK┤ $WCOL\w $LCOL├\[\e[1C\]$GPS1\[\e[1E\]╰─$\[\e[m\] "
+export PS1="$LCOL╭$HLINE$RCOL$SC$L1MARK$LCOL┤ $WCOL\w $LCOL├\[\e[1C\]$GPS1$RCOL$RC\n$LCOL╰─>$RCOL "
 
 unset LCOL
 unset HLINE
+unset SC
 unset L1MARK
 unset WCOL
 unset GCOL
 unset GPS1
+unset RC
