@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-function get_random_bg {
-    ls $WALLPAPERS_DIR/$1/* | sort -R | tail -1
-}
-
-swaymsg "output $1 bg $(get_random_bg $2) fill"
-
-
